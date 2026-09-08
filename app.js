@@ -1496,36 +1496,39 @@ document
 // AUTH SWITCH
 // ============================================================================
 
-showRegister?.addEventListener(
-    "click",
-    () => {
 
-        loginBox?.classList.remove(
-            "active"
-        );
+// ============================================================================
+// AUTH PAGE SWITCH
+// ============================================================================
 
-        registerBox?.classList.add(
-            "active"
-        );
+showRegister?.addEventListener("click", function (event) {
 
-    }
-);
+    event.preventDefault();
+
+    // Hide Login
+    loginBox?.classList.remove("active");
+    loginBox?.classList.add("hidden");
+
+    // Show Register
+    registerBox?.classList.remove("hidden");
+    registerBox?.classList.add("active");
+
+});
 
 
-showLogin?.addEventListener(
-    "click",
-    () => {
+showLogin?.addEventListener("click", function (event) {
 
-        registerBox?.classList.remove(
-            "active"
-        );
+    event.preventDefault();
 
-        loginBox?.classList.add(
-            "active"
-        );
+    // Hide Register
+    registerBox?.classList.remove("active");
+    registerBox?.classList.add("hidden");
 
-    }
-);
+    // Show Login
+    loginBox?.classList.remove("hidden");
+    loginBox?.classList.add("active");
+
+});
 
 
 // ============================================================================
@@ -1664,7 +1667,7 @@ registerForm?.addEventListener(
                 "Registration failed.";
 
             switch (
-                error.code
+            error.code
             ) {
 
                 case "auth/email-already-in-use":
@@ -1776,7 +1779,7 @@ loginForm?.addEventListener(
                 "Email অথবা Password ভুল।";
 
             switch (
-                error.code
+            error.code
             ) {
 
                 case "auth/user-not-found":
@@ -2734,10 +2737,9 @@ async function loadMembers() {
 
                     <div class="member-actions">
 
-                        ${
-                            isManager
+                        ${isManager
 
-                                ? `
+                        ? `
 
                                     <span
                                         class="role-badge manager"
@@ -2747,31 +2749,31 @@ async function loadMembers() {
 
                                 `
 
-                                : currentUserRole ===
-                                  "manager"
+                        : currentUserRole ===
+                            "manager"
 
-                                    ? `
+                            ? `
 
                                         <button
                                             type="button"
                                             class="manager-btn"
                                             data-user-id="${escapeHTML(
-                                    user.uid
-                                )}"
+                                user.uid
+                            )}"
                                         >
                                             Make Manager
                                         </button>
 
                                     `
 
-                                    : `
+                            : `
 
                                         <span class="role-badge">
                                             Member
                                         </span>
 
                                     `
-                        }
+                    }
 
                     </div>
 
@@ -3118,13 +3120,13 @@ function getMealParts(
 
     const hasNewMealSystem =
         data.breakfast !==
-            undefined ||
+        undefined ||
 
         data.lunch !==
-            undefined ||
+        undefined ||
 
         data.dinner !==
-            undefined;
+        undefined;
 
 
     if (hasNewMealSystem) {
@@ -3459,8 +3461,8 @@ async function loadDailyMeals() {
                         <div class="meal-avatar">
 
                             ${escapeHTML(
-                        initial
-                    )}
+                    initial
+                )}
 
                         </div>
 
@@ -3469,16 +3471,16 @@ async function loadDailyMeals() {
 
                             <strong>
                                 ${escapeHTML(
-                        item.name ||
-                        "Unknown Member"
-                    )}
+                    item.name ||
+                    "Unknown Member"
+                )}
                             </strong>
 
                             <small>
                                 ${escapeHTML(
-                        item.email ||
-                        ""
-                    )}
+                    item.email ||
+                    ""
+                )}
                             </small>
 
                         </div>
@@ -3501,18 +3503,17 @@ async function loadDailyMeals() {
 
                                 <div class="meal-slot-controls">
 
-                                    ${
-                                        currentUserRole ===
-                                        "manager"
+                                    ${currentUserRole ===
+                        "manager"
 
-                                            ? `
+                        ? `
 
                                                 <button
                                                     type="button"
                                                     class="meal-slot-btn minus"
                                                     data-user-id="${escapeHTML(
-                                                item.userId
-                                            )}"
+                            item.userId
+                        )}"
                                                     data-meal-type="breakfast"
                                                 >
                                                     −
@@ -3520,31 +3521,30 @@ async function loadDailyMeals() {
 
                                             `
 
-                                            : ""
-                                    }
+                        : ""
+                    }
 
 
                                     <span class="meal-slot-count">
                                         ${Number(
-                                            item.breakfast.toFixed(
-                                                2
-                                            )
-                                        )}
+                        item.breakfast.toFixed(
+                            2
+                        )
+                    )}
                                     </span>
 
 
-                                    ${
-                                        currentUserRole ===
-                                        "manager"
+                                    ${currentUserRole ===
+                        "manager"
 
-                                            ? `
+                        ? `
 
                                                 <button
                                                     type="button"
                                                     class="meal-slot-btn plus"
                                                     data-user-id="${escapeHTML(
-                                                item.userId
-                                            )}"
+                            item.userId
+                        )}"
                                                     data-meal-type="breakfast"
                                                 >
                                                     +
@@ -3552,8 +3552,8 @@ async function loadDailyMeals() {
 
                                             `
 
-                                            : ""
-                                    }
+                        : ""
+                    }
 
                                 </div>
 
@@ -3570,18 +3570,17 @@ async function loadDailyMeals() {
 
                                 <div class="meal-slot-controls">
 
-                                    ${
-                                        currentUserRole ===
-                                        "manager"
+                                    ${currentUserRole ===
+                        "manager"
 
-                                            ? `
+                        ? `
 
                                                 <button
                                                     type="button"
                                                     class="meal-slot-btn minus"
                                                     data-user-id="${escapeHTML(
-                                                item.userId
-                                            )}"
+                            item.userId
+                        )}"
                                                     data-meal-type="lunch"
                                                 >
                                                     −
@@ -3589,31 +3588,30 @@ async function loadDailyMeals() {
 
                                             `
 
-                                            : ""
-                                    }
+                        : ""
+                    }
 
 
                                     <span class="meal-slot-count">
                                         ${Number(
-                                            item.lunch.toFixed(
-                                                2
-                                            )
-                                        )}
+                        item.lunch.toFixed(
+                            2
+                        )
+                    )}
                                     </span>
 
 
-                                    ${
-                                        currentUserRole ===
-                                        "manager"
+                                    ${currentUserRole ===
+                        "manager"
 
-                                            ? `
+                        ? `
 
                                                 <button
                                                     type="button"
                                                     class="meal-slot-btn plus"
                                                     data-user-id="${escapeHTML(
-                                                item.userId
-                                            )}"
+                            item.userId
+                        )}"
                                                     data-meal-type="lunch"
                                                 >
                                                     +
@@ -3621,8 +3619,8 @@ async function loadDailyMeals() {
 
                                             `
 
-                                            : ""
-                                    }
+                        : ""
+                    }
 
                                 </div>
 
@@ -3639,18 +3637,17 @@ async function loadDailyMeals() {
 
                                 <div class="meal-slot-controls">
 
-                                    ${
-                                        currentUserRole ===
-                                        "manager"
+                                    ${currentUserRole ===
+                        "manager"
 
-                                            ? `
+                        ? `
 
                                                 <button
                                                     type="button"
                                                     class="meal-slot-btn minus"
                                                     data-user-id="${escapeHTML(
-                                                item.userId
-                                            )}"
+                            item.userId
+                        )}"
                                                     data-meal-type="dinner"
                                                 >
                                                     −
@@ -3658,31 +3655,30 @@ async function loadDailyMeals() {
 
                                             `
 
-                                            : ""
-                                    }
+                        : ""
+                    }
 
 
                                     <span class="meal-slot-count">
                                         ${Number(
-                                            item.dinner.toFixed(
-                                                2
-                                            )
-                                        )}
+                        item.dinner.toFixed(
+                            2
+                        )
+                    )}
                                     </span>
 
 
-                                    ${
-                                        currentUserRole ===
-                                        "manager"
+                                    ${currentUserRole ===
+                        "manager"
 
-                                            ? `
+                        ? `
 
                                                 <button
                                                     type="button"
                                                     class="meal-slot-btn plus"
                                                     data-user-id="${escapeHTML(
-                                                item.userId
-                                            )}"
+                            item.userId
+                        )}"
                                                     data-meal-type="dinner"
                                                 >
                                                     +
@@ -3690,8 +3686,8 @@ async function loadDailyMeals() {
 
                                             `
 
-                                            : ""
-                                    }
+                        : ""
+                    }
 
                                 </div>
 
@@ -3710,10 +3706,10 @@ async function loadDailyMeals() {
 
                             <div class="meal-total-value">
                                 ${Number(
-                                    item.meal.toFixed(
-                                        2
-                                    )
-                                )}
+                        item.meal.toFixed(
+                            2
+                        )
+                    )}
                             </div>
 
                         </div>
@@ -3960,7 +3956,7 @@ async function changeMeal(
                 const currentValue =
                     Number(
                         parts[
-                            mealType
+                        mealType
                         ] ||
                         0
                     );
@@ -4153,9 +4149,9 @@ async function loadUserDashboard(
 
         if (
             profile.role !==
-                "manager" &&
+            "manager" &&
             accountStatus !==
-                "approved"
+            "approved"
         ) {
 
             currentUser =
@@ -4223,9 +4219,8 @@ async function loadUserDashboard(
         if (welcomeText) {
 
             welcomeText.textContent =
-                `Welcome, ${
-                    profile.name ||
-                    "User"
+                `Welcome, ${profile.name ||
+                "User"
                 } 👋`;
 
         }
@@ -4243,7 +4238,7 @@ async function loadUserDashboard(
             roleBadge.classList.toggle(
                 "manager",
                 currentUserRole ===
-                    "manager"
+                "manager"
             );
         }
 
@@ -4621,10 +4616,10 @@ async function loadAccounting() {
 
         const rate =
             totalMealCount >
-            0
+                0
 
                 ? totalBazarAmount /
-                  totalMealCount
+                totalMealCount
 
                 : 0;
 
@@ -4793,47 +4788,46 @@ function renderBazar(
 
                     <strong>
                         ${money(
-                    item.amount
-                )}
+                item.amount
+            )}
                     </strong>
 
                     <span>
                         ${escapeHTML(
-                    item.description ||
-                    "Bazar Purchase"
-                )}
+                item.description ||
+                "Bazar Purchase"
+            )}
                     </span>
 
                     <small>
                         ${escapeHTML(
-                    item.date ||
-                    ""
-                )}
+                item.date ||
+                ""
+            )}
                     </small>
 
                 </div>
 
 
-                ${
-                    currentUserRole ===
+                ${currentUserRole ===
                     "manager"
 
-                        ? `
+                    ? `
 
                             <button
                                 type="button"
                                 class="delete-btn"
                                 data-type="bazar"
                                 data-id="${escapeHTML(
-                            item.id
-                        )}"
+                        item.id
+                    )}"
                             >
                                 Delete
                             </button>
 
                         `
 
-                        : ""
+                    : ""
                 }
 
             `;
@@ -4943,48 +4937,47 @@ function renderDeposits(
 
                     <strong>
                         ${money(
-                    item.amount
-                )}
+                item.amount
+            )}
                     </strong>
 
                     <span>
                         ${escapeHTML(
-                    getUserName(
-                        item.userId
-                    )
-                )}
+                getUserName(
+                    item.userId
+                )
+            )}
                     </span>
 
                     <small>
                         ${escapeHTML(
-                    item.date ||
-                    ""
-                )}
+                item.date ||
+                ""
+            )}
                     </small>
 
                 </div>
 
 
-                ${
-                    currentUserRole ===
+                ${currentUserRole ===
                     "manager"
 
-                        ? `
+                    ? `
 
                             <button
                                 type="button"
                                 class="delete-btn"
                                 data-type="deposit"
                                 data-id="${escapeHTML(
-                            item.id
-                        )}"
+                        item.id
+                    )}"
                             >
                                 Delete
                             </button>
 
                         `
 
-                        : ""
+                    : ""
                 }
 
             `;
@@ -5178,8 +5171,8 @@ function renderBalances(
                     <div class="balance-avatar">
 
                         ${escapeHTML(
-                    initial
-                )}
+                initial
+            )}
 
                     </div>
 
@@ -5188,17 +5181,17 @@ function renderBalances(
 
                         <strong>
                             ${escapeHTML(
-                    user.name ||
-                    "Unknown"
-                )}
+                user.name ||
+                "Unknown"
+            )}
                         </strong>
 
                         <small>
                             ${Number(
-                                userMeals.toFixed(
-                                    2
-                                )
-                            )} meals
+                userMeals.toFixed(
+                    2
+                )
+            )} meals
                         </small>
 
                     </div>
@@ -5214,8 +5207,8 @@ function renderBalances(
 
                         <strong>
                             ${money(
-                    userDeposits
-                )}
+                userDeposits
+            )}
                         </strong>
 
                     </span>
@@ -5227,8 +5220,8 @@ function renderBalances(
 
                         <strong>
                             ${money(
-                    mealCost
-                )}
+                mealCost
+            )}
                         </strong>
 
                     </span>
@@ -5238,11 +5231,10 @@ function renderBalances(
                         class="balance-value ${statusClass}"
                     >
 
-                        ${
-                            balance >= 0
-                                ? "+"
-                                : ""
-                        }${money(
+                        ${balance >= 0
+                    ? "+"
+                    : ""
+                }${money(
                     balance
                 )}
 
@@ -5337,8 +5329,7 @@ async function loadDepositUsers() {
 
 
                     option.textContent =
-                        `${user.name || "Unknown"} — ${
-                            user.email || ""
+                        `${user.name || "Unknown"} — ${user.email || ""
                         }`;
 
 
@@ -5778,9 +5769,8 @@ async function addDeposit() {
         showToast(
             `${money(
                 amount
-            )} deposit successfully added to ${
-                selectedUser.name ||
-                "member"
+            )} deposit successfully added to ${selectedUser.name ||
+            "member"
             }. 💰`,
             "success"
         );
@@ -6072,14 +6062,11 @@ onAuthStateChanged(
             );
 
 
-            loginBox?.classList.add(
-                "active"
-            );
+            loginBox?.classList.remove("hidden");
+            loginBox?.classList.add("active");
 
-
-            registerBox?.classList.remove(
-                "active"
-            );
+            registerBox?.classList.remove("active");
+            registerBox?.classList.add("hidden");
         }
 
     }
