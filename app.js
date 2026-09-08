@@ -1021,11 +1021,7 @@ const modalConfirm = $("modalConfirm");
 let modalResolve = null;
 
 
-function showConfirmModal(
-    title,
-    message,
-    options = {}
-) {
+function showConfirmModal(title, message, options = {}) {
 
     const {
         icon = "⚠️",
@@ -1033,46 +1029,71 @@ function showConfirmModal(
         cancelText = "Cancel"
     } = options;
 
+
     if (!customModal) {
         return Promise.resolve(false);
     }
+
 
     if (modalIcon) {
         modalIcon.textContent = icon;
     }
 
+
     if (modalTitle) {
         modalTitle.textContent = title;
     }
+
 
     if (modalMessage) {
         modalMessage.textContent = message;
     }
 
+
     if (modalConfirm) {
         modalConfirm.textContent = confirmText;
     }
+
 
     if (modalCancel) {
         modalCancel.textContent = cancelText;
     }
 
+
+    // IMPORTANT:
+    // hidden remove করতে হবে
+    customModal.classList.remove("hidden");
+
+    // তারপর modal show করতে হবে
     customModal.classList.add("show");
 
+
     return new Promise(resolve => {
+
         modalResolve = resolve;
+
     });
 }
 
 
+
 function closeModal(result) {
 
+    // Modal hide
     customModal?.classList.remove("show");
 
+    // আবার hidden করে দাও
+    customModal?.classList.add("hidden");
+
+
     if (modalResolve) {
+
         modalResolve(result);
+
         modalResolve = null;
+
     }
+
 }
 
 
@@ -4363,62 +4384,78 @@ async function loadUserDashboard(
 }
 
 
-// ============================================================================
-// LOGOUT
-// ============================================================================
+logoutBtn?.addEventListener("click", async function (event) {
 
-logoutBtn?.addEventListener(
-    "click",
-    async () => {
-
-        const confirmed =
-            await showConfirmModal(
-
-                "Logout?",
-
-                "আপনি কি আপনার account থেকে logout করতে চান?",
-
-                {
-                    icon: "🚪",
-                    confirmText:
-                        "Logout"
-                }
-
-            );
+    event.preventDefault();
 
 
-        if (!confirmed) {
-            return;
+    const confirmed = await showConfirmModal(
+        "Logout?",
+        "আপনি কি আপনার account থেকে logout করতে চান?",
+        {
+            icon: "🚪",
+            confirmText: "Logout"
         }
+    );
 
 
-        try {
-
-            await signOut(
-                auth
-            );
-
-
-            showToast(
-                "Successfully logged out.",
-                "success"
-            );
-
-        } catch (error) {
-
-            console.error(
-                "Logout error:",
-                error
-            );
-
-            showToast(
-                "Logout করা যায়নি।",
-                "error"
-            );
-        }
+    if (!confirmed) {
+        return;
     }
-);
 
+
+    try {
+
+        await signOut(auth);
+
+
+        currentUser = null;
+        currentUserRole = null;
+
+        allUsers = [];
+        allMeals = [];
+        allBazar = [];
+        allDeposits = [];
+
+
+        dashboard?.classList.add("hidden");
+
+        authContainer?.classList.remove("hidden");
+
+
+        loginBox?.classList.remove("hidden");
+        loginBox?.classList.add("active");
+
+
+        registerBox?.classList.remove("active");
+        registerBox?.classList.add("hidden");
+
+
+        loginForm?.reset();
+
+
+        showToast(
+            "Successfully logged out. 👋",
+            "success"
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Logout error:",
+            error
+        );
+
+
+        showToast(
+            "Logout করা যায়নি। আবার চেষ্টা করুন।",
+            "error"
+        );
+
+    }
+
+});
 
 // ============================================================================
 // ACCOUNTING
