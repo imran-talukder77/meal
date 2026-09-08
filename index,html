@@ -5,11 +5,27 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Mess Manager</title>
+    <meta
+        name="theme-color"
+        content="#0f172a"
+    >
 
-    <link rel="stylesheet" href="./style.css">
+    <meta
+        name="description"
+        content="Professional Mess Management and Meal Accounting System"
+    >
+
+    <title>Mess Manager — Smart Mess Management</title>
+
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
 
 </head>
 
@@ -17,582 +33,1962 @@
 <body>
 
 
-    <!-- ========================================
-         AUTH
-    ======================================== -->
+    <!-- =========================================================
+         APPLICATION
+    ========================================================== -->
 
-    <div class="auth-container" id="authContainer">
+    <div class="app">
 
 
-        <!-- LOGIN -->
+        <!-- =====================================================
+             AUTHENTICATION
+        ====================================================== -->
 
-        <div class="auth-box" id="loginBox">
+        <div
+            class="auth-container"
+            id="authContainer"
+        >
 
-            <div class="logo">
-                🍚
+
+            <!-- ================================================
+                 LOGIN
+            ================================================= -->
+
+            <div
+                class="auth-box"
+                id="loginBox"
+            >
+
+                <div class="auth-brand">
+
+                    <div class="logo">
+                        🍚
+                    </div>
+
+                    <div class="brand-text">
+
+                        <h1>
+                            Mess Manager
+                        </h1>
+
+                        <span>
+                            Smart Mess Management
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="auth-heading">
+
+                    <h2>
+                        Welcome Back
+                    </h2>
+
+                    <p class="subtitle">
+                        Login to manage your mess account
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm">
+
+
+                    <!-- EMAIL -->
+
+                    <div class="input-group">
+
+                        <label for="loginEmail">
+                            Email Address
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span
+                                class="input-icon"
+                                aria-hidden="true"
+                            >
+                                ✉️
+                            </span>
+
+                            <input
+                                type="email"
+                                id="loginEmail"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="input-group">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span
+                                class="input-icon"
+                                aria-hidden="true"
+                            >
+                                🔒
+                            </span>
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="auth-btn"
+                    >
+
+                        <span>
+                            Login
+                        </span>
+
+                        <span
+                            class="btn-arrow"
+                            aria-hidden="true"
+                        >
+                            →
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+
+                <div class="auth-divider">
+
+                    <span>
+                        New to Mess Manager?
+                    </span>
+
+                </div>
+
+
+                <p class="switch-text">
+
+                    Don't have an account?
+
+                    <button
+                        type="button"
+                        id="showRegister"
+                        class="switch-btn"
+                    >
+                        Create Account
+                    </button>
+
+                </p>
+
+
             </div>
 
-            <h1>
-                Mess Manager
-            </h1>
-
-            <p class="subtitle">
-                Login to your mess account
-            </p>
 
 
-            <form id="loginForm">
+            <!-- ================================================
+                 REGISTER
+            ================================================= -->
 
-                <div class="input-group">
+            <div
+                class="auth-box hidden"
+                id="registerBox"
+            >
 
-                    <label>Email</label>
 
-                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                <div class="auth-brand">
+
+                    <div class="logo">
+                        🍚
+                    </div>
+
+                    <div class="brand-text">
+
+                        <h1>
+                            Mess Manager
+                        </h1>
+
+                        <span>
+                            Smart Mess Management
+                        </span>
+
+                    </div>
 
                 </div>
 
 
-                <div class="input-group">
+                <div class="auth-heading">
 
-                    <label>Password</label>
+                    <h2>
+                        Create Account
+                    </h2>
 
-                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    <p class="subtitle">
+                        Join your mess and start managing
+                    </p>
 
                 </div>
 
 
-                <button type="submit" class="auth-btn">
-                    Login
-                </button>
-
-            </form>
+                <form id="registerForm">
 
 
-            <p class="switch-text">
+                    <!-- NAME -->
 
-                Don't have an account?
+                    <div class="input-group">
 
-                <button type="button" id="showRegister" class="switch-btn">
-                    Create Account
-                </button>
+                        <label for="registerName">
+                            Full Name
+                        </label>
 
-            </p>
+                        <div class="input-wrapper">
+
+                            <span
+                                class="input-icon"
+                                aria-hidden="true"
+                            >
+                                👤
+                            </span>
+
+                            <input
+                                type="text"
+                                id="registerName"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="input-group">
+
+                        <label for="registerEmail">
+                            Email Address
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span
+                                class="input-icon"
+                                aria-hidden="true"
+                            >
+                                ✉️
+                            </span>
+
+                            <input
+                                type="email"
+                                id="registerEmail"
+                                placeholder="Enter your email"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="input-group">
+
+                        <label for="registerPassword">
+                            Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span
+                                class="input-icon"
+                                aria-hidden="true"
+                            >
+                                🔒
+                            </span>
+
+                            <input
+                                type="password"
+                                id="registerPassword"
+                                placeholder="Minimum 6 characters"
+                                autocomplete="new-password"
+                                minlength="6"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="auth-btn"
+                    >
+
+                        <span>
+                            Create Account
+                        </span>
+
+                        <span
+                            class="btn-arrow"
+                            aria-hidden="true"
+                        >
+                            →
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+
+                <div class="auth-divider">
+
+                    <span>
+                        Already a member?
+                    </span>
+
+                </div>
+
+
+                <p class="switch-text">
+
+                    Already have an account?
+
+                    <button
+                        type="button"
+                        id="showLogin"
+                        class="switch-btn"
+                    >
+                        Login
+                    </button>
+
+                </p>
+
+
+            </div>
+
 
         </div>
 
 
 
-        <!-- REGISTER -->
+        <!-- =====================================================
+             DASHBOARD
+        ====================================================== -->
 
-        <div class="auth-box hidden" id="registerBox">
-
-            <div class="logo">
-                🍚
-            </div>
-
-            <h1>
-                Create Account
-            </h1>
-
-            <p class="subtitle">
-                Join your mess
-            </p>
+        <div
+            id="dashboard"
+            class="dashboard hidden"
+        >
 
 
-            <form id="registerForm">
+            <!-- =================================================
+                 SIDEBAR
+            ================================================== -->
 
-                <div class="input-group">
-
-                    <label>Name</label>
-
-                    <input type="text" id="registerName" placeholder="Enter your name" required>
-
-                </div>
+            <aside class="sidebar">
 
 
-                <div class="input-group">
+                <!-- BRAND -->
 
-                    <label>Email</label>
+                <div class="sidebar-brand">
 
-                    <input type="email" id="registerEmail" placeholder="Enter your email" required>
+                    <div class="sidebar-logo">
+                        🍚
+                    </div>
 
-                </div>
+                    <div>
 
+                        <strong>
+                            Mess Manager
+                        </strong>
 
-                <div class="input-group">
+                        <span>
+                            Management System
+                        </span>
 
-                    <label>Password</label>
-
-                    <input type="password" id="registerPassword" placeholder="Minimum 6 characters" minlength="6"
-                        required>
+                    </div>
 
                 </div>
 
 
-                <button type="submit" class="auth-btn">
-                    Create Account
-                </button>
+                <!-- NAVIGATION -->
 
-            </form>
+                <nav
+                    class="sidebar-nav"
+                    aria-label="Main navigation"
+                >
 
 
-            <p class="switch-text">
+                    <div class="nav-heading">
+                        MAIN MENU
+                    </div>
 
-                Already have an account?
 
-                <button type="button" id="showLogin" class="switch-btn">
-                    Login
-                </button>
+                    <a
+                        href="#overview"
+                        class="nav-item active"
+                    >
 
-            </p>
+                        <span class="nav-icon">
+                            🏠
+                        </span>
+
+                        <span>
+                            Overview
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#daily-meal"
+                        class="nav-item"
+                    >
+
+                        <span class="nav-icon">
+                            🍚
+                        </span>
+
+                        <span>
+                            Daily Meals
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#accounting"
+                        class="nav-item"
+                    >
+
+                        <span class="nav-icon">
+                            📊
+                        </span>
+
+                        <span>
+                            Accounting
+                        </span>
+
+                    </a>
+
+
+                    <div class="nav-heading">
+                        MANAGEMENT
+                    </div>
+
+
+                    <a
+                        href="#managerSection"
+                        class="nav-item"
+                    >
+
+                        <span class="nav-icon">
+                            👥
+                        </span>
+
+                        <span>
+                            Members
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#bazarSection"
+                        class="nav-item"
+                    >
+
+                        <span class="nav-icon">
+                            💰
+                        </span>
+
+                        <span>
+                            Bazar
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#depositSection"
+                        class="nav-item"
+                    >
+
+                        <span class="nav-icon">
+                            💵
+                        </span>
+
+                        <span>
+                            Deposits
+                        </span>
+
+                    </a>
+
+
+                </nav>
+
+
+                <!-- SIDEBAR FOOTER -->
+
+                <div class="sidebar-footer">
+
+                    <div class="sidebar-help">
+
+                        <span class="help-icon">
+                            💡
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Mess Tip
+                            </strong>
+
+                            <p>
+                                Keep meals updated daily
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </aside>
+
+
+
+            <!-- =================================================
+                 MAIN CONTENT
+            ================================================== -->
+
+            <main class="main-content">
+
+
+                <!-- =================================================
+                     TOPBAR
+                ================================================== -->
+
+                <header class="dashboard-header">
+
+
+                    <div class="header-left">
+
+                        <button
+                            type="button"
+                            class="mobile-menu-btn"
+                            aria-label="Open navigation"
+                        >
+                            ☰
+                        </button>
+
+
+                        <div class="page-heading">
+
+                            <span class="page-eyebrow">
+                                MESS MANAGEMENT
+                            </span>
+
+                            <h1>
+                                Dashboard
+                            </h1>
+
+                            <p id="welcomeText">
+                                Welcome back
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="header-right">
+
+
+                        <!-- NOTIFICATION -->
+
+                        <button
+                            type="button"
+                            class="header-icon-btn"
+                            aria-label="Notifications"
+                        >
+                            🔔
+
+                            <span class="notification-dot"></span>
+
+                        </button>
+
+
+                        <!-- ROLE -->
+
+                        <span
+                            id="roleBadge"
+                            class="role-badge"
+                        >
+                            Member
+                        </span>
+
+
+                        <!-- PROFILE -->
+
+                        <div class="header-profile">
+
+                            <div class="profile-avatar">
+                                👤
+                            </div>
+
+                            <div class="profile-info">
+
+                                <strong>
+                                    Account
+                                </strong>
+
+                                <span>
+                                    Active
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- LOGOUT -->
+
+                        <button
+                            id="logoutBtn"
+                            class="logout-btn"
+                            type="button"
+                        >
+
+                            <span>
+                                ↪
+                            </span>
+
+                            Logout
+
+                        </button>
+
+
+                    </div>
+
+
+                </header>
+
+
+
+                <!-- =================================================
+                     CONTENT WRAPPER
+                ================================================== -->
+
+                <div class="content-wrapper">
+
+
+                    <!-- =================================================
+                         OVERVIEW
+                    ================================================== -->
+
+                    <section
+                        id="overview"
+                        class="dashboard-overview"
+                    >
+
+
+                        <div class="section-title overview-title">
+
+                            <div>
+
+                                <span class="section-eyebrow">
+                                    OVERVIEW
+                                </span>
+
+                                <h2>
+                                    Mess Overview
+                                </h2>
+
+                                <p>
+                                    Keep track of your mess activity and finances
+                                </p>
+
+                            </div>
+
+
+                            <div class="overview-status">
+
+                                <span class="status-dot"></span>
+
+                                System Active
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             STAT CARDS
+                        ================================================== -->
+
+                        <div class="dashboard-cards">
+
+
+                            <!-- MEMBERS -->
+
+                            <div class="dashboard-card">
+
+                                <div class="card-top">
+
+                                    <div class="stat-icon members-icon">
+                                        👥
+                                    </div>
+
+                                    <span class="stat-label">
+                                        MEMBERS
+                                    </span>
+
+                                </div>
+
+
+                                <div class="card-content">
+
+                                    <h3>
+                                        Total Members
+                                    </h3>
+
+                                    <strong id="totalMembers">
+                                        0
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="card-footer">
+
+                                    <span>
+                                        Active mess members
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- MEALS -->
+
+                            <div class="dashboard-card">
+
+                                <div class="card-top">
+
+                                    <div class="stat-icon meals-icon">
+                                        🍚
+                                    </div>
+
+                                    <span class="stat-label">
+                                        MEALS
+                                    </span>
+
+                                </div>
+
+
+                                <div class="card-content">
+
+                                    <h3>
+                                        Total Meals
+                                    </h3>
+
+                                    <strong id="totalMeals">
+                                        0
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="card-footer">
+
+                                    <span>
+                                        Current meal records
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- BAZAR -->
+
+                            <div class="dashboard-card">
+
+                                <div class="card-top">
+
+                                    <div class="stat-icon bazar-icon">
+                                        💰
+                                    </div>
+
+                                    <span class="stat-label">
+                                        BAZAR
+                                    </span>
+
+                                </div>
+
+
+                                <div class="card-content">
+
+                                    <h3>
+                                        Total Bazar
+                                    </h3>
+
+                                    <strong id="totalBazar">
+                                        ৳0
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="card-footer">
+
+                                    <span>
+                                        Total mess expenses
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- MEAL RATE -->
+
+                            <div class="dashboard-card">
+
+                                <div class="card-top">
+
+                                    <div class="stat-icon rate-icon">
+                                        📊
+                                    </div>
+
+                                    <span class="stat-label">
+                                        RATE
+                                    </span>
+
+                                </div>
+
+
+                                <div class="card-content">
+
+                                    <h3>
+                                        Meal Rate
+                                    </h3>
+
+                                    <strong id="mealRate">
+                                        ৳0
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="card-footer">
+
+                                    <span>
+                                        Current cost per meal
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         QUICK INSIGHTS
+                    ================================================== -->
+
+                    <section class="quick-insights">
+
+
+                        <div class="section-title">
+
+                            <div>
+
+                                <span class="section-eyebrow">
+                                    QUICK INSIGHTS
+                                </span>
+
+                                <h2>
+                                    Mess Activity
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="insight-grid">
+
+
+                            <div class="insight-card">
+
+                                <div class="insight-icon">
+                                    🍚
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Meal Tracking
+                                    </span>
+
+                                    <strong>
+                                        Daily Records
+                                    </strong>
+
+                                    <p>
+                                        Update and monitor everyone's meals
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="insight-card">
+
+                                <div class="insight-icon">
+                                    💰
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Expense Tracking
+                                    </span>
+
+                                    <strong>
+                                        Bazar Records
+                                    </strong>
+
+                                    <p>
+                                        Keep every mess expense organized
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="insight-card">
+
+                                <div class="insight-icon">
+                                    🧮
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Accounting
+                                    </span>
+
+                                    <strong>
+                                        Member Balance
+                                    </strong>
+
+                                    <p>
+                                        See advance and due balances easily
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         MANAGER CONTROL
+                    ================================================== -->
+
+                    <section
+                        id="managerSection"
+                        class="manager-section hidden"
+                    >
+
+
+                        <div class="section-title">
+
+                            <div>
+
+                                <span class="section-eyebrow">
+                                    MANAGEMENT
+                                </span>
+
+                                <h2>
+                                    👑 Manager Control
+                                </h2>
+
+                                <p>
+                                    Manage mess members and assign manager role
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="management-panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <h3>
+                                        👥 Mess Members
+                                    </h3>
+
+                                    <p>
+                                        View members and manage their access
+                                    </p>
+
+                                </div>
+
+
+                                <span class="panel-badge">
+                                    Member Management
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                id="membersList"
+                                class="members-list"
+                            >
+                                <!-- Members load here -->
+                            </div>
+
+                        </div>
+
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         DAILY MEAL
+                    ================================================== -->
+
+                    <section
+                        id="daily-meal"
+                        class="meal-section"
+                    >
+
+
+                        <div class="section-title">
+
+                            <div>
+
+                                <span class="section-eyebrow">
+                                    MEAL MANAGEMENT
+                                </span>
+
+                                <h2>
+                                    🍚 Daily Meals
+                                </h2>
+
+                                <p>
+                                    Track and manage daily meals for every member
+                                </p>
+
+                            </div>
+
+
+                            <div class="section-live-status">
+
+                                <span class="status-dot"></span>
+
+                                Live Records
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- DATE SELECTOR -->
+
+                        <div class="meal-toolbar">
+
+
+                            <div class="meal-date-box">
+
+                                <label for="mealDate">
+                                    📅 Select Date
+                                </label>
+
+                                <div class="date-input-wrapper">
+
+                                    <input
+                                        type="date"
+                                        id="mealDate"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="meal-toolbar-info">
+
+                                <span>
+                                    🍚
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Daily Meal Tracking
+                                    </strong>
+
+                                    <p>
+                                        Update meals for the selected date
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- MEAL SUMMARY PLACEHOLDER -->
+
+                        <div class="meal-summary-strip">
+
+
+                            <div>
+
+                                <span class="summary-strip-icon">
+                                    🍚
+                                </span>
+
+                                <div>
+
+                                    <small>
+                                        Today's Meal Records
+                                    </small>
+
+                                    <strong>
+                                        Daily Overview
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="summary-strip-note">
+                                Select a date to view meal records
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- MEAL LIST -->
+
+                        <div class="meal-panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <h3>
+                                        Member Meals
+                                    </h3>
+
+                                    <p>
+                                        Manage meal count for each member
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                id="dailyMealList"
+                                class="daily-meal-list"
+                            >
+
+                                <div class="loading-state">
+
+                                    <div class="loading-spinner"></div>
+
+                                    <p>
+                                        Loading meals...
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         MONTHLY ACCOUNTING
+                    ================================================== -->
+
+                    <section
+                        id="accounting"
+                        class="accounting-section"
+                    >
+
+
+                        <div class="section-title">
+
+                            <div>
+
+                                <span class="section-eyebrow">
+                                    FINANCIAL MANAGEMENT
+                                </span>
+
+                                <h2>
+                                    📊 Monthly Accounting
+                                </h2>
+
+                                <p>
+                                    Track bazar, deposits, meal rate and member balances
+                                </p>
+
+                            </div>
+
+
+                            <div class="accounting-secure">
+
+                                🔐 Secure Accounting
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- MONTH SELECT -->
+
+                        <div class="accounting-toolbar">
+
+
+                            <div class="accounting-filter">
+
+                                <label for="accountingMonth">
+                                    📅 Accounting Month
+                                </label>
+
+                                <input
+                                    type="month"
+                                    id="accountingMonth"
+                                >
+
+                            </div>
+
+
+                            <div class="accounting-toolbar-note">
+
+                                <span>
+                                    📈
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Monthly Financial Overview
+                                    </strong>
+
+                                    <p>
+                                        Select a month to calculate complete mess accounting
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             ACCOUNTING SUMMARY
+                        ================================================== -->
+
+                        <div class="accounting-summary">
+
+
+                            <!-- TOTAL MEALS -->
+
+                            <div class="account-summary-card">
+
+                                <div class="account-card-icon">
+                                    🍚
+                                </div>
+
+                                <div class="account-card-info">
+
+                                    <small>
+                                        TOTAL MEALS
+                                    </small>
+
+                                    <strong id="monthTotalMeals">
+                                        0
+                                    </strong>
+
+                                    <span>
+                                        Meals consumed
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- TOTAL BAZAR -->
+
+                            <div class="account-summary-card">
+
+                                <div class="account-card-icon">
+                                    💰
+                                </div>
+
+                                <div class="account-card-info">
+
+                                    <small>
+                                        TOTAL BAZAR
+                                    </small>
+
+                                    <strong id="monthTotalBazar">
+                                        ৳0
+                                    </strong>
+
+                                    <span>
+                                        Monthly expenses
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- MEAL RATE -->
+
+                            <div class="account-summary-card">
+
+                                <div class="account-card-icon">
+                                    📊
+                                </div>
+
+                                <div class="account-card-info">
+
+                                    <small>
+                                        MEAL RATE
+                                    </small>
+
+                                    <strong id="monthMealRate">
+                                        ৳0
+                                    </strong>
+
+                                    <span>
+                                        Cost per meal
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- DEPOSIT -->
+
+                            <div class="account-summary-card">
+
+                                <div class="account-card-icon">
+                                    💵
+                                </div>
+
+                                <div class="account-card-info">
+
+                                    <small>
+                                        TOTAL DEPOSIT
+                                    </small>
+
+                                    <strong id="monthTotalDeposit">
+                                        ৳0
+                                    </strong>
+
+                                    <span>
+                                        Member deposits
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             BAZAR
+                        ================================================== -->
+
+                        <div
+                            id="bazarSection"
+                            class="account-block"
+                        >
+
+
+                            <div class="account-block-header">
+
+                                <div class="block-heading">
+
+                                    <div class="block-icon">
+                                        💰
+                                    </div>
+
+                                    <div>
+
+                                        <span>
+                                            EXPENSES
+                                        </span>
+
+                                        <h3>
+                                            Bazar Records
+                                        </h3>
+
+                                        <p>
+                                            All monthly bazar and expense records
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <span class="block-status">
+                                    Monthly
+                                </span>
+
+                            </div>
+
+
+
+                            <!-- MANAGER ADD BAZAR -->
+
+                            <div
+                                id="bazarFormBox"
+                                class="manager-form-box hidden"
+                            >
+
+
+                                <div class="form-box-heading">
+
+                                    <div>
+
+                                        <strong>
+                                            ➕ Add New Bazar
+                                        </strong>
+
+                                        <span>
+                                            Record a new mess expense
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-grid">
+
+
+                                    <div class="input-group">
+
+                                        <label for="bazarDate">
+                                            Date
+                                        </label>
+
+                                        <input
+                                            type="date"
+                                            id="bazarDate"
+                                        >
+
+                                    </div>
+
+
+                                    <div class="input-group">
+
+                                        <label for="bazarAmount">
+                                            Amount
+                                        </label>
+
+                                        <input
+                                            type="number"
+                                            id="bazarAmount"
+                                            placeholder="Amount ৳"
+                                            min="1"
+                                        >
+
+                                    </div>
+
+
+                                    <div class="input-group">
+
+                                        <label for="bazarDescription">
+                                            Description
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="bazarDescription"
+                                            placeholder="e.g. Rice, vegetables..."
+                                        >
+
+                                    </div>
+
+
+                                    <button
+                                        id="addBazarBtn"
+                                        class="primary-action-btn"
+                                        type="button"
+                                    >
+                                        + Add Bazar
+                                    </button>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <!-- BAZAR LIST -->
+
+                            <div
+                                id="bazarList"
+                                class="account-list"
+                            >
+
+                                <div class="loading-state">
+
+                                    <div class="loading-spinner"></div>
+
+                                    <p>
+                                        Loading bazar...
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             DEPOSIT
+                        ================================================== -->
+
+                        <div
+                            id="depositSection"
+                            class="account-block"
+                        >
+
+
+                            <div class="account-block-header">
+
+                                <div class="block-heading">
+
+                                    <div class="block-icon">
+                                        💵
+                                    </div>
+
+                                    <div>
+
+                                        <span>
+                                            PAYMENTS
+                                        </span>
+
+                                        <h3>
+                                            Member Deposits
+                                        </h3>
+
+                                        <p>
+                                            Track every member's deposited money
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <span class="block-status">
+                                    Monthly
+                                </span>
+
+                            </div>
+
+
+
+                            <!-- MANAGER ADD DEPOSIT -->
+
+                            <div
+                                id="depositFormBox"
+                                class="manager-form-box hidden"
+                            >
+
+
+                                <div class="form-box-heading">
+
+                                    <div>
+
+                                        <strong>
+                                            ➕ Add New Deposit
+                                        </strong>
+
+                                        <span>
+                                            Record a member payment
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-grid">
+
+
+                                    <div class="input-group">
+
+                                        <label for="depositUser">
+                                            Member
+                                        </label>
+
+                                        <select id="depositUser">
+
+                                            <option value="">
+                                                Select Member
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+
+                                    <div class="input-group">
+
+                                        <label for="depositDate">
+                                            Date
+                                        </label>
+
+                                        <input
+                                            type="date"
+                                            id="depositDate"
+                                        >
+
+                                    </div>
+
+
+                                    <div class="input-group">
+
+                                        <label for="depositAmount">
+                                            Amount
+                                        </label>
+
+                                        <input
+                                            type="number"
+                                            id="depositAmount"
+                                            placeholder="Amount ৳"
+                                            min="1"
+                                        >
+
+                                    </div>
+
+
+                                    <button
+                                        id="addDepositBtn"
+                                        class="primary-action-btn"
+                                        type="button"
+                                    >
+                                        + Add Deposit
+                                    </button>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <!-- DEPOSIT LIST -->
+
+                            <div
+                                id="depositList"
+                                class="account-list"
+                            >
+
+                                <div class="loading-state">
+
+                                    <div class="loading-spinner"></div>
+
+                                    <p>
+                                        Loading deposits...
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             MEMBER BALANCE
+                        ================================================== -->
+
+                        <div class="account-block balance-block">
+
+
+                            <div class="account-block-header">
+
+                                <div class="block-heading">
+
+                                    <div class="block-icon">
+                                        🧮
+                                    </div>
+
+                                    <div>
+
+                                        <span>
+                                            ACCOUNT STATUS
+                                        </span>
+
+                                        <h3>
+                                            Member Balance
+                                        </h3>
+
+                                        <p>
+                                            Monthly individual হিসাব and balance status
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <span class="block-status">
+                                    Live Calculation
+                                </span>
+
+                            </div>
+
+
+
+                            <div class="balance-info-banner">
+
+                                <span>
+                                    💡
+                                </span>
+
+                                <p>
+                                    Balance is calculated from deposited money
+                                    and individual meal cost.
+                                </p>
+
+                            </div>
+
+
+
+                            <div
+                                id="balanceList"
+                                class="balance-list"
+                            >
+
+                                <div class="loading-state">
+
+                                    <div class="loading-spinner"></div>
+
+                                    <p>
+                                        Calculating balance...
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         FOOTER
+                    ================================================== -->
+
+                    <footer class="dashboard-footer">
+
+                        <div>
+
+                            <strong>
+                                🍚 Mess Manager
+                            </strong>
+
+                            <span>
+                                Smart Mess Management System
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            Manage meals. Track expenses. Stay organized.
+                        </p>
+
+                    </footer>
+
+
+                </div>
+
+
+            </main>
+
 
         </div>
+
 
     </div>
 
 
 
-    <!-- ========================================
-         DASHBOARD
-    ======================================== -->
-
-    <div id="dashboard" class="dashboard hidden">
-
-
-        <!-- HEADER -->
-
-        <header class="dashboard-header">
-
-            <div>
-
-                <h1>
-                    🍚 Mess Manager
-                </h1>
-
-                <p id="welcomeText">
-                    Welcome
-                </p>
-
-            </div>
-
-
-            <div class="header-right">
-
-                <span id="roleBadge" class="role-badge">
-                    Member
-                </span>
-
-
-                <button id="logoutBtn" class="logout-btn">
-                    Logout
-                </button>
-
-            </div>
-
-        </header>
-
-
-
-        <!-- ========================================
-             STAT CARDS
-        ======================================== -->
-
-        <section class="dashboard-cards">
-
-
-            <div class="dashboard-card">
-
-                <span>👥</span>
-
-                <h3>
-                    Total Members
-                </h3>
-
-                <strong id="totalMembers">
-                    0
-                </strong>
-
-            </div>
-
-
-            <div class="dashboard-card">
-
-                <span>🍚</span>
-
-                <h3>
-                    Total Meals
-                </h3>
-
-                <strong id="totalMeals">
-                    0
-                </strong>
-
-            </div>
-
-
-            <div class="dashboard-card">
-
-                <span>💰</span>
-
-                <h3>
-                    Total Bazar
-                </h3>
-
-                <strong id="totalBazar">
-                    ৳0
-                </strong>
-
-            </div>
-
-
-            <div class="dashboard-card">
-
-                <span>📊</span>
-
-                <h3>
-                    Meal Rate
-                </h3>
-
-                <strong id="mealRate">
-                    ৳0
-                </strong>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ========================================
-             MANAGER CONTROL
-        ======================================== -->
-
-        <section id="managerSection" class="manager-section hidden">
-
-            <div class="section-title">
-
-                <div>
-
-                    <h2>
-                        👑 Manager Control
-                    </h2>
-
-                    <p>
-                        Manage your mess members
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div id="membersList" class="members-list">
-
-                <!-- Members load here -->
-
-            </div>
-
-        </section>
-
-        <!-- ========================================
-     DAILY MEAL
-======================================== -->
-
-        <section class="meal-section">
-
-            <div class="section-title">
-
-                <div>
-
-                    <h2>
-                        🍚 Daily Meal
-                    </h2>
-
-                    <p>
-                        Manage daily meals of all members
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- DATE SELECTOR -->
-
-            <div class="meal-date-box">
-
-                <label for="mealDate">
-                    📅 Select Date
-                </label>
-
-                <input type="date" id="mealDate">
-
-            </div>
-
-
-            <!-- MEAL LIST -->
-
-            <div id="dailyMealList" class="daily-meal-list">
-
-                <p class="meal-loading">
-                    Loading meals...
-                </p>
-
-            </div>
-
-        </section>
-
-    </div>
-
-
-
-
-
-    <!-- ========================================
-     MONTHLY ACCOUNTING
-======================================== -->
-
-    <section class="accounting-section">
-
-        <div class="section-title">
-
-            <div>
-                <h2>📊 Monthly Accounting</h2>
-
-                <p>
-                    Bazar, deposit, meal rate and balance
-                </p>
-            </div>
-
-        </div>
-
-
-        <!-- MONTH SELECT -->
-
-        <div class="accounting-filter">
-
-            <label for="accountingMonth">
-                📅 Select Month
-            </label>
-
-            <input type="month" id="accountingMonth">
-
-        </div>
-
-
-        <!-- SUMMARY -->
-
-        <div class="accounting-summary">
-
-            <div class="account-summary-card">
-                <span>🍚</span>
-
-                <small>Total Meals</small>
-
-                <strong id="monthTotalMeals">
-                    0
-                </strong>
-            </div>
-
-
-            <div class="account-summary-card">
-                <span>💰</span>
-
-                <small>Total Bazar</small>
-
-                <strong id="monthTotalBazar">
-                    ৳0
-                </strong>
-            </div>
-
-
-            <div class="account-summary-card">
-                <span>📊</span>
-
-                <small>Meal Rate</small>
-
-                <strong id="monthMealRate">
-                    ৳0
-                </strong>
-            </div>
-
-
-            <div class="account-summary-card">
-                <span>💵</span>
-
-                <small>Total Deposit</small>
-
-                <strong id="monthTotalDeposit">
-                    ৳0
-                </strong>
-            </div>
-
-        </div>
-
-
-        <!-- BAZAR -->
-
-        <div class="account-block">
-
-            <div class="account-block-header">
-
-                <div>
-                    <h3>💰 Bazar</h3>
-
-                    <p>
-                        All monthly bazar records
-                    </p>
-                </div>
-
-            </div>
-
-
-            <!-- MANAGER ADD BAZAR -->
-
-            <div id="bazarFormBox" class="manager-form-box hidden">
-
-                <input type="date" id="bazarDate">
-
-                <input type="number" id="bazarAmount" placeholder="Amount ৳" min="1">
-
-                <input type="text" id="bazarDescription" placeholder="Description">
-
-                <button id="addBazarBtn" class="primary-action-btn">
-                    + Add Bazar
-                </button>
-
-            </div>
-
-
-            <div id="bazarList" class="account-list">
-
-                <p class="account-loading">
-                    Loading bazar...
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- DEPOSIT -->
-
-        <div class="account-block">
-
-            <div class="account-block-header">
-
-                <div>
-                    <h3>💵 Deposit</h3>
-
-                    <p>
-                        Members' deposited money
-                    </p>
-                </div>
-
-            </div>
-
-
-            <!-- MANAGER ADD DEPOSIT -->
-
-            <div id="depositFormBox" class="manager-form-box hidden">
-
-                <select id="depositUser">
-
-                    <option value="">
-                        Select Member
-                    </option>
-
-                </select>
-
-
-                <input type="date" id="depositDate">
-
-                <input type="number" id="depositAmount" placeholder="Amount ৳" min="1">
-
-                <button id="addDepositBtn" class="primary-action-btn">
-                    + Add Deposit
-                </button>
-
-            </div>
-
-
-            <div id="depositList" class="account-list">
-
-                <p class="account-loading">
-                    Loading deposits...
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- MEMBER BALANCE -->
-
-        <div class="account-block">
-
-            <div class="account-block-header">
-
-                <div>
-                    <h3>🧮 Member Balance</h3>
-
-                    <p>
-                        Monthly individual হিসাব
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div id="balanceList" class="balance-list">
-
-                <p class="account-loading">
-                    Calculating balance...
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ========================================
-         CUSTOM MODAL
-    ======================================== -->
-
-    <div id="customModal" class="modal-overlay hidden">
+    <!-- =========================================================
+         CUSTOM CONFIRM MODAL
+    ========================================================== -->
+
+    <div
+        id="customModal"
+        class="modal-overlay hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+        aria-describedby="modalMessage"
+    >
 
         <div class="modal-box">
 
-            <div id="modalIcon" class="modal-icon">
+
+            <!-- MODAL ICON -->
+
+            <div
+                id="modalIcon"
+                class="modal-icon"
+            >
                 ⚠️
             </div>
 
 
+            <!-- MODAL TITLE -->
+
             <h3 id="modalTitle">
-                Confirm
+                Confirm Action
             </h3>
 
 
+            <!-- MODAL MESSAGE -->
+
             <p id="modalMessage">
-                Are you sure?
+                Are you sure you want to continue?
             </p>
 
 
+            <!-- MODAL ACTIONS -->
+
             <div class="modal-actions">
 
-                <button id="modalCancel" class="modal-cancel">
+
+                <button
+                    id="modalCancel"
+                    class="modal-cancel"
+                    type="button"
+                >
                     Cancel
                 </button>
 
 
-                <button id="modalConfirm" class="modal-confirm">
+                <button
+                    id="modalConfirm"
+                    class="modal-confirm"
+                    type="button"
+                >
                     Confirm
                 </button>
 
+
             </div>
+
 
         </div>
 
@@ -600,7 +1996,15 @@
 
 
 
-    <script type="module" src="./app.js"></script>
+    <!-- =========================================================
+         APPLICATION SCRIPT
+    ========================================================== -->
+
+    <script
+        type="module"
+        src="./app.js"
+    ></script>
+
 
 </body>
 
