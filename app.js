@@ -2841,32 +2841,18 @@ async function loadUserDashboard(
             }
         }
 
-        const isManager =
-            currentUserRole ===
-            "manager";
+        const isManager = currentUserRole === "manager";
 
         if (managerSection) {
-
-            managerSection.style.display =
-                isManager
-                    ? ""
-                    : "none";
+            managerSection.classList.toggle("hidden", !isManager);
         }
 
         if (bazarFormBox) {
-
-            bazarFormBox.style.display =
-                isManager
-                    ? ""
-                    : "none";
+            bazarFormBox.classList.toggle("hidden", !isManager);
         }
 
         if (depositFormBox) {
-
-            depositFormBox.style.display =
-                isManager
-                    ? ""
-                    : "none";
+            depositFormBox.classList.toggle("hidden", !isManager);
         }
 
         await loadMembers();
