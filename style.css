@@ -20,11 +20,9 @@ body {
     min-height: 100vh;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #eef2ff,
-            #f8fafc
-        );
+            #f8fafc);
 
     color: #111827;
 
@@ -67,8 +65,7 @@ body {
     border-radius: 18px;
 
     box-shadow:
-        0 15px 40px
-        rgba(0, 0, 0, 0.10);
+        0 15px 40px rgba(0, 0, 0, 0.10);
 
     text-align: center;
 
@@ -176,8 +173,7 @@ body {
     border-color: #4f46e5;
 
     box-shadow:
-        0 0 0 3px
-        rgba(79, 70, 229, .10);
+        0 0 0 3px rgba(79, 70, 229, .10);
 
 }
 
@@ -374,8 +370,7 @@ body {
     margin-bottom: 25px;
 
     box-shadow:
-        0 10px 30px
-        rgba(0, 0, 0, .08);
+        0 10px 30px rgba(0, 0, 0, .08);
 
 }
 
@@ -428,8 +423,7 @@ body {
     border-radius: 16px;
 
     box-shadow:
-        0 10px 30px
-        rgba(0, 0, 0, .07);
+        0 10px 30px rgba(0, 0, 0, .07);
 
 }
 
@@ -673,8 +667,7 @@ body {
     transform: translateY(-1px);
 
     box-shadow:
-        0 5px 15px
-        rgba(0, 0, 0, .05);
+        0 5px 15px rgba(0, 0, 0, .05);
 
 }
 
@@ -794,8 +787,7 @@ body {
     border-radius: 16px;
 
     box-shadow:
-        0 10px 30px
-        rgba(0, 0, 0, .06);
+        0 10px 30px rgba(0, 0, 0, .06);
 
 }
 
@@ -864,8 +856,7 @@ body {
     text-align: center;
 
     box-shadow:
-        0 25px 60px
-        rgba(0, 0, 0, .20);
+        0 25px 60px rgba(0, 0, 0, .20);
 
     animation:
         modalIn .2s ease;
@@ -1020,6 +1011,574 @@ body {
 
         width: 100%;
 
+    }
+
+}
+
+
+/* ========================================
+   DAILY MEAL SECTION
+======================================== */
+
+.meal-section {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    margin-top: 25px;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, .06);
+}
+
+
+/* DATE BOX */
+
+.meal-date-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+    padding: 15px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+
+.meal-date-box label {
+    font-weight: bold;
+}
+
+
+.meal-date-box input {
+    padding: 10px 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+
+
+.meal-date-box input:focus {
+    border-color: #4f46e5;
+}
+
+
+/* MEAL LIST */
+
+.daily-meal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* MEAL CARD */
+
+.daily-meal-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    transition: .2s;
+}
+
+
+.daily-meal-card:hover {
+    transform: translateY(-1px);
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, .05);
+}
+
+
+/* USER INFO */
+
+.daily-meal-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.daily-meal-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #eef2ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+
+.daily-meal-name {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+
+.daily-meal-email {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+
+/* CONTROLS */
+
+.meal-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+.meal-controls button {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 9px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+
+.meal-minus {
+    background: #ef4444;
+}
+
+
+.meal-plus {
+    background: #4f46e5;
+}
+
+
+.meal-controls button:hover {
+    transform: scale(1.06);
+}
+
+
+.meal-count {
+    min-width: 30px;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+/* MEMBER VIEW */
+
+.member-meal-count {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+
+.member-meal-count strong {
+    font-size: 20px;
+    color: #111827;
+}
+
+
+/* LOADING */
+
+.meal-loading {
+    text-align: center;
+    color: #6b7280;
+    padding: 20px;
+}
+
+
+.meal-error {
+    text-align: center;
+    color: #ef4444;
+    padding: 20px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .meal-section {
+        padding: 18px;
+    }
+
+
+    .meal-date-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .meal-date-box input {
+        width: 100%;
+    }
+
+
+    .daily-meal-card {
+        padding: 12px;
+    }
+
+
+    .daily-meal-email {
+        max-width: 160px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+
+    .meal-controls {
+        gap: 8px;
+    }
+
+
+    .meal-controls button {
+        width: 35px;
+        height: 35px;
+    }
+
+}
+
+
+/* ========================================
+   MONTHLY ACCOUNTING
+======================================== */
+
+.accounting-section {
+    margin-top: 25px;
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, .06);
+}
+
+
+/* FILTER */
+
+.accounting-filter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+    padding: 15px;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+
+.accounting-filter label {
+    font-weight: bold;
+}
+
+
+.accounting-filter input {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+
+/* SUMMARY */
+
+.accounting-summary {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+
+.account-summary-card {
+    padding: 18px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+
+.account-summary-card span {
+    font-size: 25px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+
+.account-summary-card small {
+    display: block;
+    color: #6b7280;
+    margin-bottom: 6px;
+}
+
+
+.account-summary-card strong {
+    font-size: 21px;
+}
+
+
+/* ACCOUNT BLOCK */
+
+.account-block {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #e5e7eb;
+}
+
+
+.account-block-header {
+    margin-bottom: 18px;
+}
+
+
+.account-block-header h3 {
+    margin-bottom: 5px;
+}
+
+
+.account-block-header p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* FORM */
+
+.manager-form-box {
+    display: grid;
+    grid-template-columns:
+        1fr 1fr 1.5fr auto;
+    gap: 10px;
+    padding: 15px;
+    margin-bottom: 18px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+
+.manager-form-box input,
+.manager-form-box select {
+    min-width: 0;
+    padding: 11px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+}
+
+
+.primary-action-btn {
+    border: none;
+    background: #4f46e5;
+    color: white;
+    padding: 11px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* ACCOUNT LIST */
+
+.account-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.account-record {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+
+.account-record small {
+    display: block;
+    margin-top: 5px;
+    color: #6b7280;
+}
+
+
+.record-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.delete-record-btn {
+    border: none;
+    background: #fee2e2;
+    padding: 8px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+
+/* BALANCE */
+
+.balance-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.balance-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+
+.balance-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.balance-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #eef2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.balance-user small {
+    display: block;
+    color: #6b7280;
+    margin-top: 5px;
+}
+
+
+.balance-details {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.balance-details div {
+    text-align: right;
+}
+
+
+.balance-details small {
+    display: block;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+
+.balance-final strong {
+    font-size: 20px;
+}
+
+
+.account-loading,
+.empty-account,
+.account-error {
+    text-align: center;
+    padding: 18px;
+    color: #6b7280;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .accounting-summary {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .manager-form-box {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .primary-action-btn {
+        width: 100%;
+    }
+
+
+    .balance-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+
+    .balance-details {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .accounting-section {
+        padding: 18px;
+    }
+
+
+    .accounting-summary {
+        grid-template-columns: 1fr;
+    }
+
+
+    .accounting-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .accounting-filter input {
+        width: 100%;
+    }
+
+
+    .manager-form-box {
+        grid-template-columns: 1fr;
+    }
+
+
+    .account-record {
+        gap: 12px;
+    }
+
+
+    .balance-details {
+        flex-wrap: wrap;
     }
 
 }

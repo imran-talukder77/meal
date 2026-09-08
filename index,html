@@ -5,17 +5,11 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Mess Manager</title>
 
-    <link
-        rel="stylesheet"
-        href="./style.css"
-    >
+    <link rel="stylesheet" href="./style.css">
 
 </head>
 
@@ -27,18 +21,12 @@
          AUTH
     ======================================== -->
 
-    <div
-        class="auth-container"
-        id="authContainer"
-    >
+    <div class="auth-container" id="authContainer">
 
 
         <!-- LOGIN -->
 
-        <div
-            class="auth-box"
-            id="loginBox"
-        >
+        <div class="auth-box" id="loginBox">
 
             <div class="logo">
                 🍚
@@ -59,12 +47,7 @@
 
                     <label>Email</label>
 
-                    <input
-                        type="email"
-                        id="loginEmail"
-                        placeholder="Enter your email"
-                        required
-                    >
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
 
                 </div>
 
@@ -73,20 +56,12 @@
 
                     <label>Password</label>
 
-                    <input
-                        type="password"
-                        id="loginPassword"
-                        placeholder="Enter your password"
-                        required
-                    >
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
 
                 </div>
 
 
-                <button
-                    type="submit"
-                    class="auth-btn"
-                >
+                <button type="submit" class="auth-btn">
                     Login
                 </button>
 
@@ -97,11 +72,7 @@
 
                 Don't have an account?
 
-                <button
-                    type="button"
-                    id="showRegister"
-                    class="switch-btn"
-                >
+                <button type="button" id="showRegister" class="switch-btn">
                     Create Account
                 </button>
 
@@ -113,10 +84,7 @@
 
         <!-- REGISTER -->
 
-        <div
-            class="auth-box hidden"
-            id="registerBox"
-        >
+        <div class="auth-box hidden" id="registerBox">
 
             <div class="logo">
                 🍚
@@ -137,12 +105,7 @@
 
                     <label>Name</label>
 
-                    <input
-                        type="text"
-                        id="registerName"
-                        placeholder="Enter your name"
-                        required
-                    >
+                    <input type="text" id="registerName" placeholder="Enter your name" required>
 
                 </div>
 
@@ -151,12 +114,7 @@
 
                     <label>Email</label>
 
-                    <input
-                        type="email"
-                        id="registerEmail"
-                        placeholder="Enter your email"
-                        required
-                    >
+                    <input type="email" id="registerEmail" placeholder="Enter your email" required>
 
                 </div>
 
@@ -165,21 +123,13 @@
 
                     <label>Password</label>
 
-                    <input
-                        type="password"
-                        id="registerPassword"
-                        placeholder="Minimum 6 characters"
-                        minlength="6"
-                        required
-                    >
+                    <input type="password" id="registerPassword" placeholder="Minimum 6 characters" minlength="6"
+                        required>
 
                 </div>
 
 
-                <button
-                    type="submit"
-                    class="auth-btn"
-                >
+                <button type="submit" class="auth-btn">
                     Create Account
                 </button>
 
@@ -190,11 +140,7 @@
 
                 Already have an account?
 
-                <button
-                    type="button"
-                    id="showLogin"
-                    class="switch-btn"
-                >
+                <button type="button" id="showLogin" class="switch-btn">
                     Login
                 </button>
 
@@ -210,10 +156,7 @@
          DASHBOARD
     ======================================== -->
 
-    <div
-        id="dashboard"
-        class="dashboard hidden"
-    >
+    <div id="dashboard" class="dashboard hidden">
 
 
         <!-- HEADER -->
@@ -235,18 +178,12 @@
 
             <div class="header-right">
 
-                <span
-                    id="roleBadge"
-                    class="role-badge"
-                >
+                <span id="roleBadge" class="role-badge">
                     Member
                 </span>
 
 
-                <button
-                    id="logoutBtn"
-                    class="logout-btn"
-                >
+                <button id="logoutBtn" class="logout-btn">
                     Logout
                 </button>
 
@@ -330,10 +267,7 @@
              MANAGER CONTROL
         ======================================== -->
 
-        <section
-            id="managerSection"
-            class="manager-section hidden"
-        >
+        <section id="managerSection" class="manager-section hidden">
 
             <div class="section-title">
 
@@ -352,10 +286,7 @@
             </div>
 
 
-            <div
-                id="membersList"
-                class="members-list"
-            >
+            <div id="membersList" class="members-list">
 
                 <!-- Members load here -->
 
@@ -363,26 +294,51 @@
 
         </section>
 
-
-
         <!-- ========================================
-             MEMBER AREA
-        ======================================== -->
+     DAILY MEAL
+======================================== -->
 
-        <section class="coming-section">
+        <section class="meal-section">
 
-            <div class="coming-icon">
-                🍚
+            <div class="section-title">
+
+                <div>
+
+                    <h2>
+                        🍚 Daily Meal
+                    </h2>
+
+                    <p>
+                        Manage daily meals of all members
+                    </p>
+
+                </div>
+
             </div>
 
-            <h2>
-                Meal & Bazar Management
-            </h2>
 
-            <p>
-                Meal, bazar, deposit and balance
-                system will appear here.
-            </p>
+            <!-- DATE SELECTOR -->
+
+            <div class="meal-date-box">
+
+                <label for="mealDate">
+                    📅 Select Date
+                </label>
+
+                <input type="date" id="mealDate">
+
+            </div>
+
+
+            <!-- MEAL LIST -->
+
+            <div id="dailyMealList" class="daily-meal-list">
+
+                <p class="meal-loading">
+                    Loading meals...
+                </p>
+
+            </div>
 
         </section>
 
@@ -390,21 +346,227 @@
 
 
 
+
+
+    <!-- ========================================
+     MONTHLY ACCOUNTING
+======================================== -->
+
+    <section class="accounting-section">
+
+        <div class="section-title">
+
+            <div>
+                <h2>📊 Monthly Accounting</h2>
+
+                <p>
+                    Bazar, deposit, meal rate and balance
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- MONTH SELECT -->
+
+        <div class="accounting-filter">
+
+            <label for="accountingMonth">
+                📅 Select Month
+            </label>
+
+            <input type="month" id="accountingMonth">
+
+        </div>
+
+
+        <!-- SUMMARY -->
+
+        <div class="accounting-summary">
+
+            <div class="account-summary-card">
+                <span>🍚</span>
+
+                <small>Total Meals</small>
+
+                <strong id="monthTotalMeals">
+                    0
+                </strong>
+            </div>
+
+
+            <div class="account-summary-card">
+                <span>💰</span>
+
+                <small>Total Bazar</small>
+
+                <strong id="monthTotalBazar">
+                    ৳0
+                </strong>
+            </div>
+
+
+            <div class="account-summary-card">
+                <span>📊</span>
+
+                <small>Meal Rate</small>
+
+                <strong id="monthMealRate">
+                    ৳0
+                </strong>
+            </div>
+
+
+            <div class="account-summary-card">
+                <span>💵</span>
+
+                <small>Total Deposit</small>
+
+                <strong id="monthTotalDeposit">
+                    ৳0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <!-- BAZAR -->
+
+        <div class="account-block">
+
+            <div class="account-block-header">
+
+                <div>
+                    <h3>💰 Bazar</h3>
+
+                    <p>
+                        All monthly bazar records
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- MANAGER ADD BAZAR -->
+
+            <div id="bazarFormBox" class="manager-form-box hidden">
+
+                <input type="date" id="bazarDate">
+
+                <input type="number" id="bazarAmount" placeholder="Amount ৳" min="1">
+
+                <input type="text" id="bazarDescription" placeholder="Description">
+
+                <button id="addBazarBtn" class="primary-action-btn">
+                    + Add Bazar
+                </button>
+
+            </div>
+
+
+            <div id="bazarList" class="account-list">
+
+                <p class="account-loading">
+                    Loading bazar...
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- DEPOSIT -->
+
+        <div class="account-block">
+
+            <div class="account-block-header">
+
+                <div>
+                    <h3>💵 Deposit</h3>
+
+                    <p>
+                        Members' deposited money
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- MANAGER ADD DEPOSIT -->
+
+            <div id="depositFormBox" class="manager-form-box hidden">
+
+                <select id="depositUser">
+
+                    <option value="">
+                        Select Member
+                    </option>
+
+                </select>
+
+
+                <input type="date" id="depositDate">
+
+                <input type="number" id="depositAmount" placeholder="Amount ৳" min="1">
+
+                <button id="addDepositBtn" class="primary-action-btn">
+                    + Add Deposit
+                </button>
+
+            </div>
+
+
+            <div id="depositList" class="account-list">
+
+                <p class="account-loading">
+                    Loading deposits...
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEMBER BALANCE -->
+
+        <div class="account-block">
+
+            <div class="account-block-header">
+
+                <div>
+                    <h3>🧮 Member Balance</h3>
+
+                    <p>
+                        Monthly individual হিসাব
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div id="balanceList" class="balance-list">
+
+                <p class="account-loading">
+                    Calculating balance...
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
     <!-- ========================================
          CUSTOM MODAL
     ======================================== -->
 
-    <div
-        id="customModal"
-        class="modal-overlay hidden"
-    >
+    <div id="customModal" class="modal-overlay hidden">
 
         <div class="modal-box">
 
-            <div
-                id="modalIcon"
-                class="modal-icon"
-            >
+            <div id="modalIcon" class="modal-icon">
                 ⚠️
             </div>
 
@@ -421,18 +583,12 @@
 
             <div class="modal-actions">
 
-                <button
-                    id="modalCancel"
-                    class="modal-cancel"
-                >
+                <button id="modalCancel" class="modal-cancel">
                     Cancel
                 </button>
 
 
-                <button
-                    id="modalConfirm"
-                    class="modal-confirm"
-                >
+                <button id="modalConfirm" class="modal-confirm">
                     Confirm
                 </button>
 
@@ -444,10 +600,7 @@
 
 
 
-    <script
-        type="module"
-        src="./app.js"
-    ></script>
+    <script type="module" src="./app.js"></script>
 
 </body>
 
